@@ -1,4 +1,14 @@
 /**
+ * <pre>
+ * Name: Rui Meng
+ * Mrs. Kankelborg
+ * Period 1
+ * Project 4 MazeSolver
+ * Last Revised on: 2/13/2024 
+ * </pre>
+ */
+
+/**
  * Creates new mazes. Please refer to the spec for instructions on how to generate mazes.
  */
 public class MazeGenerator
