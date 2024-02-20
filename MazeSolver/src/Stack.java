@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * A last-in-first-out (LIFO) stack of generic items.
  *
@@ -5,12 +7,13 @@
  */
 public class Stack<T>
 {
+    private ArrayList<T> list;
     /**
      * Initializes an empty stack.
      */
     public Stack()
     {
-        throw new UnsupportedOperationException("Implement me!");
+        list = new ArrayList<>();
     }
 
     /**
@@ -20,7 +23,7 @@ public class Stack<T>
      */
     public void push(T newItem)
     {
-        throw new UnsupportedOperationException("Implement me!");
+        list.add(newItem);
     }
 
     /**
@@ -30,7 +33,10 @@ public class Stack<T>
      */
     public T pop()
     {
-        throw new UnsupportedOperationException("Implement me!");
+    	if (isEmpty()) {
+	        throw new IllegalStateException("Cannot pop from an empty stack.");
+	    }
+	    return list.remove(list.size() - 1);
     }
 
     /**
@@ -40,7 +46,10 @@ public class Stack<T>
      */
     public T peek()
     {
-        throw new UnsupportedOperationException("Implement me!");
+    	if (isEmpty()) {
+            throw new IllegalStateException("Cannot peek on an empty stack.");
+        }
+        return list.get(list.size() - 1);
     }
 
     /**
@@ -50,7 +59,7 @@ public class Stack<T>
      */
     public boolean isEmpty()
     {
-        throw new UnsupportedOperationException("Implement me!");
+    	return list.isEmpty();
     }
 
     /**
@@ -60,6 +69,6 @@ public class Stack<T>
      */
     public int size()
     {
-        throw new UnsupportedOperationException("Implement me!");
+    	return list.size();
     }
 }
