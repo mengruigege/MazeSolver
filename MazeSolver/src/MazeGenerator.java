@@ -30,29 +30,34 @@ public class MazeGenerator
         boolean[][] visited = new boolean[size][size];
         Stack<Cell> stack = new Stack<>();
 
-        // Start at a random cell
-        int startX = rand.nextInt(size);
-        int startY = rand.nextInt(size);
-        visited[startX][startY] = true;
-        stack.push(new Cell(startX, startY));
+        // Initialize at (0, 0) as specified
+        visited[0][0] = true;
+        stack.push(new Cell(0, 0));
 
         while (!stack.isEmpty()) {
-            Cell current = stack.peek();
+            Cell current = stack.pop(); // Pop the current cell off the stack
             ArrayList<Cell> neighbors = getUnvisitedNeighbors(current, visited, maze);
 
             if (!neighbors.isEmpty()) {
                 Cell neighbor = neighbors.get(rand.nextInt(neighbors.size()));
                 removeWallBetween(maze, current, neighbor);
                 visited[neighbor.getX()][neighbor.getY()] = true;
-                stack.push(neighbor);
-            } else {
-                stack.pop();
+                stack.push(current); // Push the current cell back onto the stack
+                stack.push(neighbor); // Push the neighbor cell onto the stack
             }
         }
+        
+        // Randomly choose start and end cells ensuring they are not the same
+        int startX, startY, endX, endY;
+        do {
+            startX = rand.nextInt(size);
+            startY = rand.nextInt(size);
+            endX = rand.nextInt(size);
+            endY = rand.nextInt(size);
+        } while (startX == endX && startY == endY);
 
-        // Optionally set start and end points
-        maze.setStart(0, 0);
-        maze.setEnd(size - 1, size - 1);
+        maze.setStart(startX, startY);
+        maze.setEnd(endX, endY);
 
         return maze;
     }
