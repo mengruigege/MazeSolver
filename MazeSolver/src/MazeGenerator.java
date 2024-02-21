@@ -1,6 +1,3 @@
-import java.util.ArrayList;
-import java.util.Random;
-
 /**
  * <pre>
  * Name: Rui Meng
@@ -10,6 +7,8 @@ import java.util.Random;
  * Last Revised on: 2/20/2024 
  * </pre>
  */
+import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * Creates new mazes. Please refer to the spec for instructions on how to generate mazes.

@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 /**
  * <pre>
  * Name: Rui Meng
@@ -8,6 +7,7 @@ import java.util.ArrayList;
  * Last Revised on: 2/20/2024 
  * </pre>
  */
+import java.util.ArrayList;
 
 /**
  * A last-in-first-out (LIFO) stack of generic items.
