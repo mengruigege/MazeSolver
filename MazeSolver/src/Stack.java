@@ -1,4 +1,13 @@
 import java.util.ArrayList;
+/**
+ * <pre>
+ * Name: Rui Meng
+ * Mrs. Kankelborg
+ * Period 1
+ * Project 4 MazeSolver
+ * Last Revised on: 2/20/2024 
+ * </pre>
+ */
 
 /**
  * A last-in-first-out (LIFO) stack of generic items.
