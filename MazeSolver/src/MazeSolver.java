@@ -9,7 +9,6 @@ import java.util.ArrayList;
  * </pre>
  */
 
-
 /**
  * Solves mazes. Please refer to the specification for instructions on how to solve mazes.
  */
