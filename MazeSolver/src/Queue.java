@@ -1,16 +1,40 @@
 /**
+ * <pre>
+ * Name: Rui Meng
+ * Mrs. Kankelborg
+ * Period 1
+ * Project 4 MazeSolver
+ * Last Revised on: 2/26/2024 
+ * </pre>
+ */
+
+/**
  * A first-in-first-out (FIFO) queue of generic items.
  *
  * @param <T> the type of item to store in the queue
  */
 public class Queue<T>
 {
+    private static class Node<T> {
+        private T data;
+        private Node<T> next;
+
+        public Node(T data) {
+            this.data = data;
+        }
+    }
+
+	private Node<T> head; // front of the queue
+    private Node<T> tail; // end of the queue
+    private int size = 0;
+
     /**
      * Initializes an empty queue.
      */
     public Queue()
     {
-        throw new UnsupportedOperationException("Implement me!");
+        head = null;
+        tail = null;
     }
 
     /**
@@ -20,7 +44,15 @@ public class Queue<T>
      */
     public void enqueue(T newItem)
     {
-        throw new UnsupportedOperationException("Implement me!");
+    	Node<T> newNode = new Node<>(newItem);
+	    if (tail != null) {
+	        tail.next = newNode;
+	    }
+	    tail = newNode;
+	    if (head == null) {
+	        head = newNode;
+	    }
+	    size++;
     }
 
     /**
@@ -30,7 +62,16 @@ public class Queue<T>
      */
     public T dequeue()
     {
-        throw new UnsupportedOperationException("Implement me!");
+    	if (head == null) {
+    		throw new IllegalStateException("Cannot pop an empty queue.");
+    	}
+        T data = head.data;
+        head = head.next;
+        if (head == null) {
+            tail = null; // queue is now empty
+        }
+        size--;
+        return data;
     }
 
     /**
@@ -40,8 +81,11 @@ public class Queue<T>
      */
     public T peek()
     {
-        throw new UnsupportedOperationException("Implement me!");
-    }
+        if (head == null) {
+        	throw new IllegalStateException("Cannot peek an empty queue.");
+        }
+        return head.data;
+	}
 
     /**
      * Returns whether the queue is empty.
@@ -50,7 +94,7 @@ public class Queue<T>
      */
     public boolean isEmpty()
     {
-        throw new UnsupportedOperationException("Implement me!");
+        return size == 0;
     }
 
     /**
@@ -60,6 +104,6 @@ public class Queue<T>
      */
     public int size()
     {
-        throw new UnsupportedOperationException("Implement me!");
+    	return size;
     }
 }
