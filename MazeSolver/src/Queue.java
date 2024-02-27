@@ -7,7 +7,6 @@
  * Last Revised on: 2/26/2024 
  * </pre>
  */
-
 /**
  * A first-in-first-out (FIFO) queue of generic items.
  *
