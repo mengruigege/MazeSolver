@@ -26,6 +26,7 @@ public class MazeSolver
     	
     	/**
          * Constructor for Node when creating the first step in the path, where there is no previous Node.
+         * 
          * @param cell The current position in the maze.
          * @param previous Reference to the previous Node in the path.
          */
@@ -36,6 +37,7 @@ public class MazeSolver
     	
     	/**
          * Return the Cell object representing this Node's position in the maze.
+         * 
          * @return The Cell object associated with this Node.
          */
     	public Cell getCell() {
@@ -44,6 +46,7 @@ public class MazeSolver
     	
     	/**
          * Return the previous Node in the path.
+         * 
          * @return The previous Node in the path.
          */
     	public Node getPreviousNode() {
