@@ -112,16 +112,16 @@ public class MazeSolver
 	 * @return The constructed path from start to end.
 	 */
     private Path constructPath(Node node) {
-    	Path res = new Path();
+    	Path result = new Path();
     	while (node != null) {
     		// Add the current cell to the front of the path.
-            res.addFirst(node.getCell());
+            result.addFirst(node.getCell());
             
             // Move to the previous node in the path.
             node = node.getPreviousNode();
     	}
     	
-    	return res;
+    	return result;
     }
     
     /**
